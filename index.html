@@ -25,9 +25,11 @@
 	     * Check out: github.com/atduarte
 	     */
 	    (function () {
-	    	var hue = 175, hueDiff = 75, increment = 0.03, interval = 10;
+	    	var hue = 175, hueDiff, increment = 0.05, interval = 10, multiplier = 1;
 
+	    	var updateHueDiff = function () { hueDiff = Math.max(document.body.offsetWidth * 0.04, 50); console.log(hueDiff) };
 			var hsl = function () { return 'hsl(' + [].slice.call(arguments).join(',') + ')'; }
+
 			var createGradient = function (from, to) {
 				return [
 					'background: ' + from,
@@ -41,12 +43,14 @@
 			var incrementGradient = function () {
 				document.body.style.cssText = createGradient(hsl(hue, '100%', '50%'), hsl(hue + hueDiff, '100%', '50%'));
 
-				hue += increment;
-				if (hue > 0 && hue < 150) hue += 0.1; // I don't like the greens. Sorry
-				if (hue >= 360) hue = 0;
+				hue += increment * multiplier;
+				if (hue >= 270) multiplier = -1;
+				if (hue <= 150) multiplier = 1;
 			} 
 
+			updateHueDiff();
 			setInterval(incrementGradient, interval);
+			window.onresize = updateHueDiff;
 		})();
 	</script>
 </body>
