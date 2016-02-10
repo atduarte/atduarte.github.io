@@ -19,7 +19,7 @@
 			color: white;
 		}
 
-		.main img {
+		.main > img {
 			border-radius: 100%;
 			border: 5px solid rgba(255, 255, 255, 0.2);
 		}
@@ -32,10 +32,10 @@
 			opacity: 0.5;
 		}
 
-		.main a { color: white; }
-		.main i { opacity: .75; }
-		.main i:hover { opacity: 1; }
+		.main a { color: white; opacity: .75; }
+		.main a:hover { opacity: 1; }
 		.main a:not(:first-child) { padding-left: 5px; }
+		.main a img { vertical-align: middle }
 	</style>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -48,10 +48,11 @@
 		<h1>André Duarte</h1>
 		<h3>Software Engineer</h3>
 		<p>
-			<a href="https://github.com/atduarte"><i class="fa fa-github"></i></a>
-			<a href="https://linkedin.com/in/atduarte"><i class="fa fa-linkedin"></i></a>
-			<a href="https://twitter.com/atduarte"><i class="fa fa-twitter"></i></a>
-			<a href="mailto:mail@andreduarte.net"><i class="fa fa-envelope"></i></a>
+			<a href="https://github.com/atduarte" title="GitHub"><i class="fa fa-github"></i></a>
+			<a href="https://linkedin.com/in/atduarte" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+			<a href="https://refind.com/atduarte" title="Refind"><img src="refind.png" width="15" height="15"></a>
+			<a href="https://twitter.com/atduarte" title="Twitter"><i class="fa fa-twitter"></i></a>
+			<a href="mailto:mail@andreduarte.net" title="Email"><i class="fa fa-envelope"></i></a>
 		</p>
 		
 	</div>
