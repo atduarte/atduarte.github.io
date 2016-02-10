@@ -5,11 +5,11 @@
 	<style type="text/css">
 		/* Hard-coded Inline CSS for faster 1st frame */
 		body { 
-			background: hsl(150,100%,50%);
-			background: -moz-linear-gradient(-90deg, hsl(150,100%,50%) 0%, hsl(225,100%,50%) 100%);
-			background: -webkit-linear-gradient(-45deg, hsl(150,100%,50%) 0%, hsl(225,100%,50%) 100%);
-			background: linear-gradient(135deg, hsl(150,100%,50%) 0%, hsl(225,100%,50%) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="hsl(150,100%,50%)", endColorstr="hsl(225,100%,50%)", GradientType=1) 
+			background: hsl(175,100%,50%);
+			background: -moz-linear-gradient(-90deg, hsl(175,100%,50%) 0%, hsl(225,100%,50%) 100%);
+			background: -webkit-linear-gradient(-45deg, hsl(175,100%,50%) 0%, hsl(225,100%,50%) 100%);
+			background: linear-gradient(135deg, hsl(175,100%,50%) 0%, hsl(225,100%,50%) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="hsl(175,100%,50%)", endColorstr="hsl(225,100%,50%)", GradientType=1) 
 		}
 	</style>
 </head>
@@ -25,7 +25,7 @@
 	     * Check out: github.com/atduarte
 	     */
 
-		var hue = 150, hueDiff = 75, increment = 0.1, interval = 5;
+		var hue = 175, hueDiff = 75, increment = 0.05, interval = 5;
 
 		var hsl = function () { return 'hsl(' + [].slice.call(arguments).join(',') + ')'; }
 		var createGradient = function (from, to) {
@@ -43,7 +43,7 @@
 			document.body.style.cssText = createGradient(hsl(hue, '100%', '50%'), hsl(hue + hueDiff, '100%', '50%'));
 
 			hue += increment;
-			if (hue > 70 - hueDiff  && hue < 130) hue += 0.5; // I don't like the greens. Sorry
+			if (hue > 0 && hue < 150) hue += 0.5; // I don't like the greens. Sorry
 			if (hue >= 360) hue = 0;
 		} 
 
