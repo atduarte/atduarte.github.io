@@ -2,46 +2,104 @@
 <html>
 <head>
 	<title>André Duarte</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		/* Hard-coded Inline CSS for faster 1st frame */
+		* {
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.main {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+		    	-webkit-transform: translate(-50%, -50%);
+		    	transform: translate(-50%, -50%);
+		    	text-align: center;
+		    	margin-top: -3%;
+		    	color: white;
+		}
+
+		.main img {
+			border-radius: 100%;
+			border: 5px solid rgba(255, 255, 255, 0.2);
+		}
+
+		.main h1, h3 {
+			margin: 0;
+
+		}
+
+		.main h1 {
+			padding-top: 10px;
+		}
+
+		.main h3 {
+			text-transform: uppercase;
+			font-size: 12px;
+			opacity: 0.5;
+		}
+
+		.main i {
+			opacity: .75;
+		}
+
+		.main i:hover {
+			opacity: 1;
+		}
+
+		.main i:not(:first-child) {
+			padding-left: 5px;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<!-- Working on it -->
+	<div class="main">
+		<img src="https://scontent-mad1-1.xx.fbcdn.net/hphotos-xlt1/v/t1.0-9/12037944_10207227283592633_2702714107985268975_n.jpg?oh=0712355616e5945a113ebc5d170af8f1&oe=572B0B01"
+		height="150" width="150" style="">
+		<h1>André Duarte</h1>
+		<h3>Software Engineer</h3>
+		<p>
+			<i class="fa fa-github"></i>
+			<i class="fa fa-linkedin"></i>
+			<i class="fa fa-twitter"></i>
+			<i class="fa fa-facebook"></i>
+		</p>
+		
+	</div>
 
 	<script type="text/javascript">
-		/**
-		 * Yes, in a couple month I will be available for hire
-		 * but this is NOT the place you should be looking at 
-		 * if you want to see my coding skills.
-	     *
-	     * Check out: github.com/atduarte
-	     */
 	    (function () {
-	    	var hue = 175, hueDiff, increment = 0.05, interval = 10, multiplier = 1;
-
-	    	var updateHueDiff = function () { hueDiff = Math.max(document.body.offsetWidth * 0.04, 50); console.log(hueDiff) };
-			var hsl = function () { return 'hsl(' + [].slice.call(arguments).join(',') + ')'; }
-
-			var createGradient = function (from, to) {
-				return [
-					'background: ' + from,
-					'background: -moz-linear-gradient(-90deg, ' + from + ' 0%, ' + to + ' 100%)',
-					'background: -webkit-linear-gradient(-45deg, ' + from + ' 0%, ' + to + ' 100%)',
-					'background: linear-gradient(135deg, ' + from + ' 0%, ' + to + ' 100%)',
-					'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="' + from + '", endColorstr="' + to + '", GradientType=1)'
-				].join(';');
-			}
-
-			var incrementGradient = function () {
-				document.body.style.cssText = createGradient(hsl(hue, '100%', '50%'), hsl(hue + hueDiff, '100%', '50%'));
-
-				hue += increment * multiplier;
-				if (hue >= 270) multiplier = -1;
-				if (hue <= 150) multiplier = 1;
-			} 
-
+	    	var hue = Math.random() * (270 - 150) + 150, hueDiff = 90;
+	
+	    	var updateHueDiff = function () { hueDiff = Math.max(document.body.offsetWidth * 0.04, 30); };
+		var hsl = function () { return 'hsl(' + [].slice.call(arguments).join(',') + ')'; }
+	
+		var createGradient = function (from, to) {
+			return [
+				'background: ' + from,
+				'background: -moz-linear-gradient(left, ' + from + ' 0%, ' + to + ' 100%)',
+				'background: -webkit-linear-gradient(left, ' + from + ' 0%, ' + to + ' 100%)',
+				'background: linear-gradient(to right, ' + from + ' 0%, ' + to + ' 100%)',
+				'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="' + from + '", endColorstr="' + to + '", GradientType=1)'
+			].join(';');
+		}
+	
+		var setGradient = function () {
+			document.body.style.cssText = createGradient(hsl(hue, '100%', '50%'), hsl(hue + hueDiff, '100%', '50%'));
+		} 
+	
+		var init = function () {
 			updateHueDiff();
-			setInterval(incrementGradient, interval);
-			window.onresize = updateHueDiff;
-		})();
+			setGradient();
+		};
+	
+		init();
+		window.onresize = init();
+	    })();
 	</script>
 </body>
 </html>
