@@ -4,20 +4,19 @@
 	<title>André Duarte</title>
 	<meta charset="UTF-8">
 	<style type="text/css">
-		/* Hard-coded Inline CSS for faster 1st frame */
 		* {
 			font-family: 'Montserrat', sans-serif;
 		}
 
 		.main {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-		    	-webkit-transform: translate(-50%, -50%);
-		    	transform: translate(-50%, -50%);
-		    	text-align: center;
-		    	margin-top: -3%;
-		    	color: white;
+		    position: fixed;
+		    top: 50%;
+		    left: 50%;
+		    -webkit-transform: translate(-50%, -50%);
+		    transform: translate(-50%, -50%);
+		    text-align: center;
+		    margin-top: -1%;
+			color: white;
 		}
 
 		.main img {
@@ -25,32 +24,18 @@
 			border: 5px solid rgba(255, 255, 255, 0.2);
 		}
 
-		.main h1, h3 {
-			margin: 0;
-
-		}
-
-		.main h1 {
-			padding-top: 10px;
-		}
-
+		.main h1, h3 { margin: 0; }
+		.main h1 { padding-top: 10px; }
 		.main h3 {
 			text-transform: uppercase;
 			font-size: 12px;
 			opacity: 0.5;
 		}
 
-		.main i {
-			opacity: .75;
-		}
-
-		.main i:hover {
-			opacity: 1;
-		}
-
-		.main i:not(:first-child) {
-			padding-left: 5px;
-		}
+		.main a { color: white; }
+		.main i { opacity: .75; }
+		.main i:hover { opacity: 1; }
+		.main a:not(:first-child) { padding-left: 5px; }
 	</style>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -63,43 +48,50 @@
 		<h1>André Duarte</h1>
 		<h3>Software Engineer</h3>
 		<p>
-			<i class="fa fa-github"></i>
-			<i class="fa fa-linkedin"></i>
-			<i class="fa fa-twitter"></i>
-			<i class="fa fa-facebook"></i>
+			<a href="https://github.com/atduarte"><i class="fa fa-github"></i></a>
+			<a href="https://linkedin.com/in/atduarte"><i class="fa fa-linkedin"></i></a>
+			<a href="https://twitter.com/atduarte"><i class="fa fa-twitter"></i></a>
+			<a href="mailito:mail@andreduarte.net"><i class="fa fa-envelope"></i></a>
 		</p>
 		
 	</div>
 
 	<script type="text/javascript">
+		/**
+		 * Yes, in a couple month I will be available for hire
+		 * but this is NOT the place you should be looking at 
+		 * if you want to see my coding skills.
+	     *
+	     * Check out: github.com/atduarte
+	     */
 	    (function () {
 	    	var hue = Math.random() * (270 - 150) + 150, hueDiff = 90;
-	
+
 	    	var updateHueDiff = function () { hueDiff = Math.max(document.body.offsetWidth * 0.04, 30); };
-		var hsl = function () { return 'hsl(' + [].slice.call(arguments).join(',') + ')'; }
-	
-		var createGradient = function (from, to) {
-			return [
-				'background: ' + from,
-				'background: -moz-linear-gradient(left, ' + from + ' 0%, ' + to + ' 100%)',
-				'background: -webkit-linear-gradient(left, ' + from + ' 0%, ' + to + ' 100%)',
-				'background: linear-gradient(to right, ' + from + ' 0%, ' + to + ' 100%)',
-				'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="' + from + '", endColorstr="' + to + '", GradientType=1)'
-			].join(';');
-		}
-	
-		var setGradient = function () {
-			document.body.style.cssText = createGradient(hsl(hue, '100%', '50%'), hsl(hue + hueDiff, '100%', '50%'));
-		} 
-	
-		var init = function () {
-			updateHueDiff();
-			setGradient();
-		};
-	
-		init();
-		window.onresize = init();
-	    })();
+			var hsl = function () { return 'hsl(' + [].slice.call(arguments).join(',') + ')'; }
+
+			var createGradient = function (from, to) {
+				return [
+					'background: ' + from,
+					'background: -moz-linear-gradient(left, ' + from + ' 0%, ' + to + ' 100%)',
+					'background: -webkit-linear-gradient(left, ' + from + ' 0%, ' + to + ' 100%)',
+					'background: linear-gradient(to right, ' + from + ' 0%, ' + to + ' 100%)',
+					'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="' + from + '", endColorstr="' + to + '", GradientType=1)'
+				].join(';');
+			}
+
+			var setGradient = function () {
+				document.body.style.cssText = createGradient(hsl(hue, '100%', '50%'), hsl(hue + hueDiff, '100%', '50%'));
+			} 
+
+			var init = function () {
+				updateHueDiff();
+				setGradient();
+			};
+
+			init();
+			window.onresize = init;
+		})();
 	</script>
 </body>
 </html>
