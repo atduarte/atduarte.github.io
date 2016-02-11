@@ -105,11 +105,27 @@
 		ga('create', 'UA-73647507-1', 'auto');
 		ga('send', 'pageview');
 
+		// Track Outbound Links
 		[].forEach.call(document.getElementsByTagName('a'), function (link) {
 			link.onclick = function (e) {
+				e.preventDefault();
+
+				var redirected = false,
+					redirect = function() {
+						if (!redirected) {
+							redirected = true; 
+							document.location = link.href;
+						}
+					};
+
 				ga('send', 'event', 'outbound', 'click', link.href, {
-					'transport': 'beacon'
+					transport: 'beacon',
+					hitCallback: redirect
 				});
+
+				// If ga fails
+				setTimeout(redirect, 400);
+
 			}
 		});	
 	</script>
