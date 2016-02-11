@@ -114,7 +114,7 @@
 					redirect = function() {
 						if (!redirected) {
 							redirected = true; 
-							document.location = link.href;
+							window.open(link.href, '_blank');
 						}
 					};
 
