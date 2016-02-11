@@ -42,6 +42,24 @@
 		.main .bio { font-size: 12px; line-height: 17px }
 		.main .bio a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
 		.main .bio a:hover { border-bottom-color: rgba(255,255,255,1); }
+
+
+	  	body { 
+	  		background: hsl(215, 100%, 50%); 
+	  		background: -moz-linear-gradient(left, hsl(200, 100%, 50%) 0%, hsl(220, 100%, 50%) 100%);
+			background: -webkit-linear-gradient(left, hsl(200, 100%, 50%) 0%, hsl(220, 100%, 50%) 100%);
+			background: linear-gradient(to right, hsl(200, 100%, 50%) 0%, hsl(220, 100%, 50%) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="hsl(180, 100%, 50%)", endColorstr="hsl(270, 100%, 50%)", GradientType=1);
+	  	}
+
+		@media only screen and (min-width : 480px) {
+			body {
+			  	background: -moz-linear-gradient(left, hsl(180, 100%, 50%) 0%, hsl(270, 100%, 50%) 100%);
+				background: -webkit-linear-gradient(left, hsl(180, 100%, 50%) 0%, hsl(270, 100%, 50%) 100%);
+				background: linear-gradient(to right, hsl(180, 100%, 50%) 0%, hsl(270, 100%, 50%) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="hsl(180, 100%, 50%)", endColorstr="hsl(270, 100%, 50%)", GradientType=1);
+			}	  		
+		}
 	</style>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -57,13 +75,15 @@
 
 		<p class="bio">
 			Founded <a href="https://revis.pt">Revis.pt</a><br>
-			Worked at <a href="http://ventureoak.com/">VentureOak</a>, <a href="http://www.kuantokusta.pt/">KuantoKusta</a> and <a href="http://whysurreal.com/">Surreal Creative</a><br>
+			Worked at <a href="http://ventureoak.com/" >VentureOak</a>, <a href="http://www.kuantokusta.pt/">KuantoKusta</a> and <a href="http://whysurreal.com/">Surreal Creative</a><br>
 			Finishing my Master's Degree at FEUP
 		</p>
 
 		<p class="bio" style="opacity: 0.75">
 			I will be available for hire in July<br>
-			Check <a href="https://linkedin.com/in/atduarte">my experience</a>, <a href="https://github.com/atduarte">my projects</a> and <a href="mailto:mail@andreduarte.net">contact me</a>
+			Check <a href="https://linkedin.com/in/atduarte">my experience</a>, 
+			<a href="https://github.com/atduarte">my projects</a> and 
+			<a href="mailto:mail@andreduarte.net">contact me</a>
 		</p>
 
 		<p class="social">
@@ -76,45 +96,22 @@
 		
 	</div>
 
-	<script type="text/javascript">
-	    (function () {
-	    	var hue = 170, hueDiff = 90;
-
-	    	var updateHueDiff = function () { hueDiff = Math.max(document.body.offsetWidth * 0.055, 40); };
-			var hsl = function () { return 'hsl(' + [].slice.call(arguments).join(',') + ')'; }
-
-			var createGradient = function (from, to) {
-				return [
-					'background: ' + from,
-					'background: -moz-linear-gradient(left, ' + from + ' 0%, ' + to + ' 100%)',
-					'background: -webkit-linear-gradient(left, ' + from + ' 0%, ' + to + ' 100%)',
-					'background: linear-gradient(to right, ' + from + ' 0%, ' + to + ' 100%)',
-					'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="' + from + '", endColorstr="' + to + '", GradientType=1)'
-				].join(';');
-			}
-
-			var setGradient = function () {
-				document.body.style.cssText = createGradient(hsl(hue, '100%', '50%'), hsl(hue + hueDiff, '100%', '50%'));
-			} 
-
-			var init = function () {
-				updateHueDiff();
-				setGradient();
-			};
-
-			init();
-			window.onresize = init;
-		})();
-	</script>
-
 	<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  ga('create', 'UA-73647507-1', 'auto');
-		  ga('send', 'pageview');
+		ga('create', 'UA-73647507-1', 'auto');
+		ga('send', 'pageview');
+
+		[].forEach.call(document.getElementsByTagName('a'), function (link) {
+			link.onclick = function (e) {
+				ga('send', 'event', 'outbound', 'click', link.href, {
+					'transport': 'beacon'
+				});
+			}
+		});	
 	</script>
 </body>
 </html>
