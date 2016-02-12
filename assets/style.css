@@ -1,0 +1,54 @@
+* {
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
+.main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: -1%;
+	color: white;
+}
+
+.main > img {
+	border-radius: 100%;
+	border: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+.main h1, h3 { margin: 0; }
+.main h1 { padding-top: 10px; }
+.main h3 {
+	text-transform: uppercase;
+	font-size: 12px;
+	opacity: 0.5;
+}
+
+.social a { opacity: .75; }
+.social a:hover { opacity: 1; }
+.social a:not(:first-child) { padding-left: 5px; }
+.social a img { vertical-align: middle }
+
+.main .bio { font-size: 12px; line-height: 17px }
+.main .bio a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+.main .bio a:hover { border-bottom-color: rgba(255,255,255,1); }
+
+body { 
+	background: hsl(215, 100%, 50%); 
+	background: -moz-linear-gradient(left, hsl(200, 100%, 50%) 0%, hsl(220, 100%, 50%) 100%);
+	background: -webkit-linear-gradient(left, hsl(200, 100%, 50%) 0%, hsl(220, 100%, 50%) 100%);
+	background: linear-gradient(to right, hsl(200, 100%, 50%) 0%, hsl(220, 100%, 50%) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="hsl(180, 100%, 50%)", endColorstr="hsl(270, 100%, 50%)", GradientType=1);
+}
+
+@media only screen and (min-width : 480px) {
+	body {
+	  	background: -moz-linear-gradient(left, hsl(180, 100%, 50%) 0%, hsl(270, 100%, 50%) 100%);
+		background: -webkit-linear-gradient(left, hsl(180, 100%, 50%) 0%, hsl(270, 100%, 50%) 100%);
+		background: linear-gradient(to right, hsl(180, 100%, 50%) 0%, hsl(270, 100%, 50%) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="hsl(180, 100%, 50%)", endColorstr="hsl(270, 100%, 50%)", GradientType=1);
+	}	  		
+}
