@@ -17,6 +17,11 @@
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<a href="mailto:hi@andreduarte.io" title="Email">
+		<div id="topBar">
+			Looking for top-notch teams to work with. Have one? <i class="fa fa-envelope-o"></i>
+		</div>
+	</a>
 	<div class="main">
 		<img src="/assets/images/avatar.jpg"
 		height="150" width="150">
@@ -30,13 +35,6 @@
 			Finishing my Master's Degree at FEUP
 		</p>
 
-		<p class="bio" style="opacity: 0.75">
-			I will be available for hire in July<br>
-			Check <a href="https://linkedin.com/in/atduarte">my experience</a>, 
-			<a href="https://github.com/atduarte">my projects</a> and 
-			<a href="mailto:hi@andreduarte.io">contact me</a>
-		</p>
-
 		<p class="social">
 			<a href="https://linkedin.com/in/atduarte" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
 			<a href="https://github.com/atduarte" title="GitHub"><i class="fa fa-github"></i></a>
@@ -44,10 +42,11 @@
 			<a href="https://twitter.com/atduarte" title="Twitter"><i class="fa fa-twitter"></i></a>
 			<a href="mailto:hi@andreduarte.io" title="Email"><i class="fa fa-envelope"></i></a>
 		</p>
-		
+
 	</div>
 
 	<script>
+		// Big Brother is watching you.
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -64,7 +63,7 @@
 				var redirected = false,
 					redirect = function() {
 						if (!redirected) {
-							redirected = true; 
+							redirected = true;
 							window.open(link.href, '_blank');
 						}
 					};
@@ -76,9 +75,8 @@
 
 				// If ga fails
 				setTimeout(redirect, 400);
-
 			}
-		});	
+		});
 	</script>
 </body>
 </html>
