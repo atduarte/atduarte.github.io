@@ -4,65 +4,45 @@
 }
 
 .main {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-    margin-top: -1%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 	color: white;
 }
 
 .main > img {
 	border-radius: 100%;
-	border: 5px solid rgba(255, 255, 255, 0.2);
+	border: 7px solid rgba(0, 0, 0, 0.5);
 }
 
 .main h1, h3 { margin: 0; }
-.main h1 { padding-top: 10px; }
+.main h1 { text-shadow: 0 0 30px #000; font-family: 'Kanit', sans-serif; font-size: 46px; font-weight: 100; line-height: 46px;}
 .main h3 {
+	font-weight: 700;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 14px;
 	color: yellow;
+	padding-top: 3px;
+	padding-bottom: 10px
 }
 
-.social a { opacity: .85; }
+.social a { opacity: .85; text-shadow: 0 0 15px #000; }
 .social a:hover { opacity: 1; }
 .social a:not(:first-child) { padding-left: 5px; }
 .social a img { vertical-align: middle }
 
-.main .bio { font-size: 12px; line-height: 17px }
-.main .bio a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
-.main .bio a:hover { border-bottom-color: rgba(255,255,255,1); }
+.main .bio { font-size: 11px; text-transform: uppercase; line-height: 20px; text-shadow: 1px 1px 5px #000; font-weight: 400; }
+.main .bio a { text-decoration: none; border-bottom: 2px solid rgba(255, 255, 0, 0.7); font-weight: 700; }
+.main .bio a:hover { border-bottom-color: rgba(255, 255, 0, 1); }
 
 body {
-	background: linear-gradient(rgba(15, 0, 0, 0.75), rgba(15, 0, 0, 0.75)), url(/assets/images/background.jpg) no-repeat center center fixed;
+	background-color: #0c0d0f;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-#topBar{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background: url(/assets/images/sayagata-400px.png);
-	background-color: rgba(255, 255, 0, 1);
-	font-size: 11px;
-	color: black;
-	padding: 10px 0;
-	text-align: center;
-	border-bottom: 1px solid;
-	text-transform: uppercase;
-}
-
-#topBar i {
-	margin-left: 3px;
-}
-
-#topBar b, #topBar a, #topBar i {
-	color: black;
 }
