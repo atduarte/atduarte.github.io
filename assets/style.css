@@ -61,3 +61,30 @@ body {
   bottom: 25px;
   background-color: yellow;
 }
+
+#hire {
+	position: absolute;
+  right: 25px;
+  top: 25px;
+	border: 2px solid yellow;
+	padding: 4px 6px;
+	font-size: 10px;
+	text-decoration: none;
+  color: yellow;
+	text-transform: uppercase;
+}
+
+@media (max-width:400px) {
+	#square {
+		display: none;
+	}
+
+	#hire {
+		bottom: 25px;
+		top: inherit;
+	  right: inherit;
+	  left: 50%;
+	  -webkit-transform: translate(-50%, 0);
+	  transform: translate(-50%, 0);
+	}
+}
