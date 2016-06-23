@@ -3,22 +3,22 @@
 	color: white;
 }
 
-body {
+html {
 	background-color: #0c0d0f;
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .main {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
 	color: white;
 	width: 85%;
 }
@@ -56,21 +56,21 @@ body {
 #square {
 	position: absolute;
 	width: 15px;
-  height: 15px;
-  right: 25px;
-  bottom: 25px;
-  background-color: yellow;
+	height: 15px;
+	right: 25px;
+	bottom: 25px;
+	background-color: yellow;
 }
 
 #hire {
 	position: absolute;
-  right: 25px;
-  top: 25px;
+	right: 25px;
+	top: 25px;
 	border: 2px solid yellow;
 	padding: 4px 6px;
 	font-size: 10px;
 	text-decoration: none;
-  color: yellow;
+	color: yellow;
 	text-transform: uppercase;
 }
 
@@ -82,9 +82,9 @@ body {
 	#hire {
 		bottom: 25px;
 		top: inherit;
-	  right: inherit;
-	  left: 50%;
-	  -webkit-transform: translate(-50%, 0);
-	  transform: translate(-50%, 0);
+		right: inherit;
+		left: 50%;
+		-webkit-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
 	}
 }
